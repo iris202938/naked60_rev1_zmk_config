@@ -1,5 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/pro_micro.h>
 #include "layouts.dtsi"
 
 / {
@@ -26,29 +25,29 @@
 
         diode-direction = "col2row";
         
-        /* 元のQMK info.json の rows: ["B6", "D1", "D0", "D4", "C6"] に対応 */
+        /* rows: ["B6", "D1", "D0", "D4", "C6"] */
         row-gpios
-            = <&pro_micro_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* B6 */
-            ,<&pro_micro_d 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D1 */
-            ,<&pro_micro_d 3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D0 */
-            ,<&pro_micro_d 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D4 */
-            ,<&pro_micro_d 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* C6 */
+            = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* B6 */
+            ,<&pro_micro 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D1 */
+            ,<&pro_micro 3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D0 */
+            ,<&pro_micro 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D4 */
+            ,<&pro_micro 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* C6 */
             ;
             
-        /* 元のQMK info.json の cols: ["F4", "F5", "F6", "F7", "B1", "B3", "B2", "D7", "E6", "B4", "B5", "D3"] に対応 */
+        /* cols: ["F4", "F5", "F6", "F7", "B1", "B3", "B2", "D7", "E6", "B4", "B5", "D3"] */
         col-gpios
-            = <&pro_micro_a 3 GPIO_ACTIVE_HIGH> /* F4 (A3) */
-            ,<&pro_micro_a 2 GPIO_ACTIVE_HIGH> /* F5 (A2) */
-            ,<&pro_micro_a 1 GPIO_ACTIVE_HIGH> /* F6 (A1) */
-            ,<&pro_micro_a 0 GPIO_ACTIVE_HIGH> /* F7 (A0) */
-            ,<&pro_micro_d 13 GPIO_ACTIVE_HIGH> /* B1 */
-            ,<&pro_micro_d 12 GPIO_ACTIVE_HIGH> /* B3 */
-            ,<&pro_micro_d 11 GPIO_ACTIVE_HIGH> /* B2 */
-            ,<&pro_micro_d 6  GPIO_ACTIVE_HIGH> /* D7 */
-            ,<&pro_micro_d 7  GPIO_ACTIVE_HIGH> /* E6 */
-            ,<&pro_micro_d 8  GPIO_ACTIVE_HIGH> /* B4 */
-            ,<&pro_micro_d 9  GPIO_ACTIVE_HIGH> /* B5 */
-            ,<&pro_micro_d 1  GPIO_ACTIVE_HIGH> /* D3 */
+            = <&pro_micro 21 GPIO_ACTIVE_HIGH> /* F4 */
+            ,<&pro_micro 20 GPIO_ACTIVE_HIGH> /* F5 */
+            ,<&pro_micro 19 GPIO_ACTIVE_HIGH> /* F6 */
+            ,<&pro_micro 18 GPIO_ACTIVE_HIGH> /* F7 */
+            ,<&pro_micro 15 GPIO_ACTIVE_HIGH> /* B1 */
+            ,<&pro_micro 14 GPIO_ACTIVE_HIGH> /* B3 */
+            ,<&pro_micro 16 GPIO_ACTIVE_HIGH> /* B2 */
+            ,<&pro_micro 6  GPIO_ACTIVE_HIGH> /* D7 */
+            ,<&pro_micro 7  GPIO_ACTIVE_HIGH> /* E6 */
+            ,<&pro_micro 8  GPIO_ACTIVE_HIGH> /* B4 */
+            ,<&pro_micro 9  GPIO_ACTIVE_HIGH> /* B5 */
+            ,<&pro_micro 0  GPIO_ACTIVE_HIGH> /* D3 */
             ;
     };
 };
