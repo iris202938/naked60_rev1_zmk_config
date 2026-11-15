@@ -25,13 +25,13 @@
 
         diode-direction = "col2row";
         
-        /* 行ピン (4行目が1行目になる現象を防ぐため、順番を調整) */
+        /* 行ピンの順番を再シャッフルして全行が正しくスキャンされるように調整 */
         row-gpios
-            = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 1行目に対応させるピン */
-            ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 2行目 */
-            ,<&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 3行目 */
-            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 4行目 */
-            ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 5行目 */
+            = <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
             
         /* 列ピン (12列) */
