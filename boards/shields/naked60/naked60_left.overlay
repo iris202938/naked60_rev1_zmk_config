@@ -25,7 +25,6 @@
 
         diode-direction = "col2row";
         
-        /* 行ピンの順番を再シャッフルして全行が正しくスキャンされるように調整 */
         row-gpios
             = <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
