@@ -25,29 +25,29 @@
 
         diode-direction = "col2row";
         
-        /* rows: ["B6", "D1", "D0", "D4", "C6"] */
+        /* 行ピンの再割り当て（反応しなかった行のピンを変更） */
         row-gpios
-            = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* B6 */
-            ,<&pro_micro 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D1 */
-            ,<&pro_micro 3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D0 */
-            ,<&pro_micro 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* D4 */
-            ,<&pro_micro 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* C6 */
+            = <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 変更: 18 -> 17 */
+            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 変更: 16 -> 22 */
+            ,<&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
             
-        /* cols: ["F4", "F5", "F6", "F7", "B1", "B3", "B2", "D7", "E6", "B4", "B5", "D3"] */
+        /* 列ピン */
         col-gpios
-            = <&pro_micro 21 GPIO_ACTIVE_HIGH> /* F4 */
-            ,<&pro_micro 20 GPIO_ACTIVE_HIGH> /* F5 */
-            ,<&pro_micro 19 GPIO_ACTIVE_HIGH> /* F6 */
-            ,<&pro_micro 18 GPIO_ACTIVE_HIGH> /* F7 */
-            ,<&pro_micro 15 GPIO_ACTIVE_HIGH> /* B1 */
-            ,<&pro_micro 14 GPIO_ACTIVE_HIGH> /* B3 */
-            ,<&pro_micro 16 GPIO_ACTIVE_HIGH> /* B2 */
-            ,<&pro_micro 6  GPIO_ACTIVE_HIGH> /* D7 */
-            ,<&pro_micro 7  GPIO_ACTIVE_HIGH> /* E6 */
-            ,<&pro_micro 8  GPIO_ACTIVE_HIGH> /* B4 */
-            ,<&pro_micro 9  GPIO_ACTIVE_HIGH> /* B5 */
-            ,<&pro_micro 0  GPIO_ACTIVE_HIGH> /* D3 */
+            = <&gpio0 5 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 0 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 30 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 3 GPIO_ACTIVE_HIGH>
+            ,<&gpio1 14 GPIO_ACTIVE_HIGH>
+            ,<&gpio1 15 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 9 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 22 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 23 GPIO_ACTIVE_HIGH>
+            ,<&gpio1 0 GPIO_ACTIVE_HIGH>
+            ,<&gpio1 3 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 8 GPIO_ACTIVE_HIGH>
             ;
     };
 };
