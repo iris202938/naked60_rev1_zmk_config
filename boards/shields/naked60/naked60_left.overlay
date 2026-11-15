@@ -25,13 +25,13 @@
 
         diode-direction = "col2row";
         
-        /* 行ピンの並び順を上から順に再配置 */
+        /* 行ピンの並び順およびアサインを再調整 */
         row-gpios
-            = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ,<&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
             
         /* 列ピン (12列) */
