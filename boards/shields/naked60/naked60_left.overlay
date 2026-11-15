@@ -25,16 +25,16 @@
 
         diode-direction = "col2row";
         
-        /* 行ピンの再割り当て（反応しなかった行のピンを変更） */
+        /* 行ピン (4行目が1行目になる現象を防ぐため、順番を調整) */
         row-gpios
-            = <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 変更: 18 -> 17 */
-            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 変更: 16 -> 22 */
-            ,<&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 1行目に対応させるピン */
+            ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 2行目 */
+            ,<&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 3行目 */
+            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 4行目 */
+            ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* 5行目 */
             ;
             
-        /* 列ピン */
+        /* 列ピン (12列) */
         col-gpios
             = <&gpio0 5 GPIO_ACTIVE_HIGH>
             ,<&gpio0 0 GPIO_ACTIVE_HIGH>
@@ -43,7 +43,7 @@
             ,<&gpio1 14 GPIO_ACTIVE_HIGH>
             ,<&gpio1 15 GPIO_ACTIVE_HIGH>
             ,<&gpio0 9 GPIO_ACTIVE_HIGH>
-            ,<&gpio0 22 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 6 GPIO_ACTIVE_HIGH>
             ,<&gpio0 23 GPIO_ACTIVE_HIGH>
             ,<&gpio1 0 GPIO_ACTIVE_HIGH>
             ,<&gpio1 3 GPIO_ACTIVE_HIGH>
