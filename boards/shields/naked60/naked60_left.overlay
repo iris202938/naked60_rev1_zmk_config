@@ -25,28 +25,29 @@
 
         diode-direction = "col2row";
         
+        /* KiCad配線に基づく正確な行ピン (5行) */
         row-gpios
-            = <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ,<&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
             
-        /* 列ピン (12列) */
+        /* KiCad配線に基づく正確な列ピン (12列) */
         col-gpios
-            = <&gpio0 5 GPIO_ACTIVE_HIGH>
-            ,<&gpio0 0 GPIO_ACTIVE_HIGH>
-            ,<&gpio0 30 GPIO_ACTIVE_HIGH>
-            ,<&gpio0 3 GPIO_ACTIVE_HIGH>
-            ,<&gpio1 14 GPIO_ACTIVE_HIGH>
-            ,<&gpio1 15 GPIO_ACTIVE_HIGH>
-            ,<&gpio0 9 GPIO_ACTIVE_HIGH>
-            ,<&gpio0 6 GPIO_ACTIVE_HIGH>
+            = <&gpio0 6  GPIO_ACTIVE_HIGH>
+            ,<&gpio0 8  GPIO_ACTIVE_HIGH>
+            ,<&gpio0 17 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 9  GPIO_ACTIVE_HIGH>
             ,<&gpio0 23 GPIO_ACTIVE_HIGH>
-            ,<&gpio1 0 GPIO_ACTIVE_HIGH>
-            ,<&gpio1 3 GPIO_ACTIVE_HIGH>
-            ,<&gpio0 8 GPIO_ACTIVE_HIGH>
+            ,<&gpio1 0  GPIO_ACTIVE_HIGH>
+            ,<&gpio1 3  GPIO_ACTIVE_HIGH>
+            ,<&gpio0 5  GPIO_ACTIVE_HIGH>
+            ,<&gpio0 0  GPIO_ACTIVE_HIGH>
+            ,<&gpio0 30 GPIO_ACTIVE_HIGH>
+            ,<&gpio0 3  GPIO_ACTIVE_HIGH>
+            ,<&gpio1 15 GPIO_ACTIVE_HIGH>
             ;
     };
 };
