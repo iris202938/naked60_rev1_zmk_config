@@ -25,16 +25,16 @@
 
         diode-direction = "col2row";
         
-        /* 正しい5行の行ピン定義（gpio0 24を復元） */
+        /* 行ピンの並び順を完全に反転（上下の逆転を解消し、全5行を正しくスキャン） */
         row-gpios
-            = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
             
-        /* 完璧に機能している列ピン (12列) */
+        /* 列ピン (12列) */
         col-gpios
             = <&gpio0 5  GPIO_ACTIVE_HIGH>
             ,<&gpio0 0  GPIO_ACTIVE_HIGH>
