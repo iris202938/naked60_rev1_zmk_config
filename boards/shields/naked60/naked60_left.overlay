@@ -25,16 +25,16 @@
 
         diode-direction = "col2row";
         
-        /* BLE Micro Proで確実に存在する実PINS5〜9のGPIOピンを指定 */
+        /* 行ピンの並び順を完全に逆転（上3行のピンを手前に配置） */
         row-gpios
-            = <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ,<&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ,<&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
             
-        /* 検証済みの列ピン (12列) */
+        /* 動作確認済みの列ピン (12列) */
         col-gpios
             = <&gpio0 5  GPIO_ACTIVE_HIGH>
             ,<&gpio0 0  GPIO_ACTIVE_HIGH>
