@@ -5,10 +5,3 @@ config ZMK_KEYBOARD_NAME
     default "naked60"
 
 endif
-
-if SHIELD_NAKED60_LEFT || SHIELD_NAKED60_RIGHT
-
-config ZMK_SPLIT
-    default y
-
-endif

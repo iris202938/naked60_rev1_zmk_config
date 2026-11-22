@@ -1,4 +1,3 @@
-
 file_format: "1"
 id: naked60
 name: naked60
@@ -9,6 +8,3 @@ features:
 outputs:
   - usb
   - ble
-siblings:
-  - naked60_left
-  - naked60_right
