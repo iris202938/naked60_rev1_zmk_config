@@ -57,7 +57,7 @@
     transform = <&default_transform>;
 };
 
-/* P0.18・P0.16 をキースキャンで使うためI2Cを無効化 */
-&i2c0 {
-    status = "disabled";
-};
+// /* P0.18・P0.16 をキースキャンで使うためI2Cを無効化 */
+// &i2c0 {
+//     status = "disabled";
+// };
