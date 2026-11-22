@@ -25,19 +25,16 @@
         rows = <5>;
         columns = <12>;
 
-        /* 1. 正常に動いていた Row0, Row3, Row4 */
         main {
             kscan = <&kscan_main>;
         };
 
-        /* 2. レベルシフタ付きの Row1, Row2（行インデックスを +1 オフセットして配置） */
         rows12 {
             kscan = <&kscan_rows12>;
             row-offset = <1>;
         };
     };
 
-    /* Row0, Row3, Row4 用のスキャナ（Row1, Row2 はダミーではなく、Row0 の下に Row3, Row4 を詰めて transform で調整するか、5行定義のままRow1/2をダミー化） */
     kscan_main: kscan_main {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
@@ -45,8 +42,8 @@
 
         row-gpios
             = <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* Row0: P0.9  */
-            ,<&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* Row1: 未使用PIN2をダミー指定 */
-            ,<&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* Row2: 未使用ピンをダミー指定 */
+            ,<&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* Row1ダミー(PIN2) */
+            ,<&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* Row2ダミー */
             ,<&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* Row3: P0.19 */
             ,<&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* Row4: P0.20 */
             ;
@@ -67,15 +64,14 @@
             ;
     };
 
-    /* Row1(P0.18), Row2(P0.16) 専用スキャナ：Col側をActive LowにしてレベルシフタのHighを順方向に引き抜く */
     kscan_rows12: kscan_rows12 {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
         diode-direction = "col2row";
 
         row-gpios
-            = <&gpio0 18 GPIO_ACTIVE_LOW> /* Row1: P0.18 (外部プルアップありのため内部プル無効) */
-            ,<&gpio0 16 GPIO_ACTIVE_LOW> /* Row2: P0.16 (外部プルアップありのため内部プル無効) */
+            = <&gpio0 18 GPIO_ACTIVE_LOW> /* Row1: P0.18 */
+            ,<&gpio0 16 GPIO_ACTIVE_LOW> /* Row2: P0.16 */
             ;
 
         col-gpios
