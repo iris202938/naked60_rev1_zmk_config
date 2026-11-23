@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define QWE 0
 #define LWR 1
@@ -56,7 +57,7 @@
                 &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP                                    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
                 &mt LCTRL LANG5 &out OUT_BLE    &trans          &trans          &kp LS(RIGHT)   &kp G                                           &kp INT5        &trans          &trans          &trans          &trans    		&kp RCTRL
                 &kp LALT        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                                    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &mt LGUI       &trans
-                &trans          &trans          &trans          &to QWE         &sk_alt         &trans          &bt BT_CLR      &bt BT_CLR_ALL  &trans          &trans	        &trans          &trans          &trans          &trans
+                &trans          &trans          &trans          &to QWE         &trans          &trans          &bt BT_CLR      &bt BT_CLR_ALL  &trans          &trans	        &trans          &trans          &trans          &trans
             >;
         };
     };
